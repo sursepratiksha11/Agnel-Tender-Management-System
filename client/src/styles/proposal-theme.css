@@ -1,0 +1,327 @@
+/**
+ * Proposal Theme Styles
+ *
+ * Isolated dark mode styles for proposal pages only.
+ * These styles are scoped to .proposal-theme-root and do not affect other pages.
+ *
+ * Usage: Import this file in your proposal pages or main entry point.
+ */
+
+/* ============================================
+   CSS Custom Properties (Variables)
+   ============================================ */
+
+/* Light Theme (Default) */
+.proposal-theme-root.proposal-light {
+  --proposal-bg-primary: #f8fafc;
+  --proposal-bg-secondary: #ffffff;
+  --proposal-bg-tertiary: #f1f5f9;
+  --proposal-bg-elevated: #ffffff;
+
+  --proposal-text-primary: #0f172a;
+  --proposal-text-secondary: #475569;
+  --proposal-text-tertiary: #64748b;
+  --proposal-text-muted: #94a3b8;
+
+  --proposal-border-primary: #e2e8f0;
+  --proposal-border-secondary: #cbd5e1;
+
+  --proposal-accent-primary: #0ea5e9;
+  --proposal-accent-secondary: #6366f1;
+
+  --proposal-success: #10b981;
+  --proposal-warning: #f59e0b;
+  --proposal-error: #ef4444;
+
+  --proposal-shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --proposal-shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --proposal-shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+}
+
+/* Dark Theme */
+.proposal-theme-root.proposal-dark {
+  --proposal-bg-primary: #0f172a;
+  --proposal-bg-secondary: #1e293b;
+  --proposal-bg-tertiary: #334155;
+  --proposal-bg-elevated: #1e293b;
+
+  --proposal-text-primary: #f1f5f9;
+  --proposal-text-secondary: #cbd5e1;
+  --proposal-text-tertiary: #94a3b8;
+  --proposal-text-muted: #64748b;
+
+  --proposal-border-primary: #334155;
+  --proposal-border-secondary: #475569;
+
+  --proposal-accent-primary: #38bdf8;
+  --proposal-accent-secondary: #818cf8;
+
+  --proposal-success: #34d399;
+  --proposal-warning: #fbbf24;
+  --proposal-error: #f87171;
+
+  --proposal-shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.3);
+  --proposal-shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.4), 0 2px 4px -2px rgb(0 0 0 / 0.3);
+  --proposal-shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.5), 0 4px 6px -4px rgb(0 0 0 / 0.4);
+}
+
+/* ============================================
+   Base Styles (scoped to proposal pages)
+   ============================================ */
+
+.proposal-theme-root {
+  min-height: 100%;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.proposal-theme-root.proposal-dark {
+  background-color: var(--proposal-bg-primary);
+  color: var(--proposal-text-primary);
+}
+
+/* ============================================
+   Component Overrides for Dark Mode
+   ============================================ */
+
+/* Cards */
+.proposal-dark .proposal-card {
+  background-color: var(--proposal-bg-secondary);
+  border-color: var(--proposal-border-primary);
+  box-shadow: var(--proposal-shadow-md);
+}
+
+/* Inputs */
+.proposal-dark .proposal-input {
+  background-color: var(--proposal-bg-tertiary);
+  border-color: var(--proposal-border-primary);
+  color: var(--proposal-text-primary);
+}
+
+.proposal-dark .proposal-input::placeholder {
+  color: var(--proposal-text-muted);
+}
+
+.proposal-dark .proposal-input:focus {
+  border-color: var(--proposal-accent-primary);
+  box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.2);
+}
+
+/* Buttons */
+.proposal-dark .proposal-btn-secondary {
+  background-color: var(--proposal-bg-tertiary);
+  color: var(--proposal-text-primary);
+  border-color: var(--proposal-border-secondary);
+}
+
+.proposal-dark .proposal-btn-secondary:hover {
+  background-color: var(--proposal-border-primary);
+}
+
+/* Text colors */
+.proposal-dark .proposal-text-primary {
+  color: var(--proposal-text-primary);
+}
+
+.proposal-dark .proposal-text-secondary {
+  color: var(--proposal-text-secondary);
+}
+
+.proposal-dark .proposal-text-muted {
+  color: var(--proposal-text-muted);
+}
+
+/* Borders */
+.proposal-dark .proposal-border {
+  border-color: var(--proposal-border-primary);
+}
+
+/* Backgrounds */
+.proposal-dark .proposal-bg-elevated {
+  background-color: var(--proposal-bg-elevated);
+}
+
+.proposal-dark .proposal-bg-subtle {
+  background-color: var(--proposal-bg-tertiary);
+}
+
+/* ============================================
+   Specific Component Styles
+   ============================================ */
+
+/* Editor area */
+.proposal-dark .proposal-editor {
+  background-color: var(--proposal-bg-secondary);
+  color: var(--proposal-text-primary);
+}
+
+.proposal-dark .proposal-editor textarea {
+  background-color: transparent;
+  color: var(--proposal-text-primary);
+}
+
+/* Sidebar */
+.proposal-dark .proposal-sidebar {
+  background-color: var(--proposal-bg-secondary);
+  border-color: var(--proposal-border-primary);
+}
+
+.proposal-dark .proposal-sidebar-item {
+  color: var(--proposal-text-secondary);
+}
+
+.proposal-dark .proposal-sidebar-item:hover {
+  background-color: var(--proposal-bg-tertiary);
+  color: var(--proposal-text-primary);
+}
+
+.proposal-dark .proposal-sidebar-item.active {
+  background-color: rgba(56, 189, 248, 0.1);
+  color: var(--proposal-accent-primary);
+  border-color: var(--proposal-accent-primary);
+}
+
+/* Header */
+.proposal-dark .proposal-header {
+  background-color: var(--proposal-bg-secondary);
+  border-color: var(--proposal-border-primary);
+}
+
+/* Modal overlays */
+.proposal-dark .proposal-modal-overlay {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.proposal-dark .proposal-modal {
+  background-color: var(--proposal-bg-secondary);
+  border-color: var(--proposal-border-primary);
+}
+
+/* Status badges */
+.proposal-dark .proposal-badge-draft {
+  background-color: rgba(100, 116, 139, 0.2);
+  color: #94a3b8;
+}
+
+.proposal-dark .proposal-badge-final {
+  background-color: rgba(251, 191, 36, 0.2);
+  color: #fbbf24;
+}
+
+.proposal-dark .proposal-badge-published {
+  background-color: rgba(52, 211, 153, 0.2);
+  color: #34d399;
+}
+
+/* Progress bars */
+.proposal-dark .proposal-progress-bg {
+  background-color: var(--proposal-bg-tertiary);
+}
+
+.proposal-dark .proposal-progress-fill {
+  background: linear-gradient(to right, var(--proposal-accent-primary), var(--proposal-accent-secondary));
+}
+
+/* Tooltips */
+.proposal-dark .proposal-tooltip {
+  background-color: var(--proposal-bg-elevated);
+  color: var(--proposal-text-primary);
+  border-color: var(--proposal-border-secondary);
+  box-shadow: var(--proposal-shadow-lg);
+}
+
+/* Alerts */
+.proposal-dark .proposal-alert-info {
+  background-color: rgba(56, 189, 248, 0.1);
+  border-color: rgba(56, 189, 248, 0.3);
+  color: var(--proposal-accent-primary);
+}
+
+.proposal-dark .proposal-alert-success {
+  background-color: rgba(52, 211, 153, 0.1);
+  border-color: rgba(52, 211, 153, 0.3);
+  color: var(--proposal-success);
+}
+
+.proposal-dark .proposal-alert-warning {
+  background-color: rgba(251, 191, 36, 0.1);
+  border-color: rgba(251, 191, 36, 0.3);
+  color: var(--proposal-warning);
+}
+
+.proposal-dark .proposal-alert-error {
+  background-color: rgba(248, 113, 113, 0.1);
+  border-color: rgba(248, 113, 113, 0.3);
+  color: var(--proposal-error);
+}
+
+/* ============================================
+   Scrollbar Styles
+   ============================================ */
+
+.proposal-dark ::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.proposal-dark ::-webkit-scrollbar-track {
+  background: var(--proposal-bg-tertiary);
+  border-radius: 4px;
+}
+
+.proposal-dark ::-webkit-scrollbar-thumb {
+  background: var(--proposal-border-secondary);
+  border-radius: 4px;
+}
+
+.proposal-dark ::-webkit-scrollbar-thumb:hover {
+  background: var(--proposal-text-muted);
+}
+
+/* ============================================
+   Transition Utilities
+   ============================================ */
+
+.proposal-theme-transition {
+  transition: background-color 0.2s ease,
+              color 0.2s ease,
+              border-color 0.2s ease,
+              box-shadow 0.2s ease;
+}
+
+/* ============================================
+   Utility Classes
+   ============================================ */
+
+/* Apply dark mode to specific Tailwind components */
+.proposal-dark .bg-white {
+  background-color: var(--proposal-bg-secondary) !important;
+}
+
+.proposal-dark .bg-slate-50 {
+  background-color: var(--proposal-bg-primary) !important;
+}
+
+.proposal-dark .bg-slate-100 {
+  background-color: var(--proposal-bg-tertiary) !important;
+}
+
+.proposal-dark .text-slate-900 {
+  color: var(--proposal-text-primary) !important;
+}
+
+.proposal-dark .text-slate-700 {
+  color: var(--proposal-text-secondary) !important;
+}
+
+.proposal-dark .text-slate-500,
+.proposal-dark .text-slate-600 {
+  color: var(--proposal-text-tertiary) !important;
+}
+
+.proposal-dark .border-slate-200 {
+  border-color: var(--proposal-border-primary) !important;
+}
+
+.proposal-dark .border-slate-300 {
+  border-color: var(--proposal-border-secondary) !important;
+}
